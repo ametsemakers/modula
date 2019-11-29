@@ -6,6 +6,8 @@ if (isset($_POST['envoyer']))
 
 	include 'connexion.php';
 
+	// ici, il faudra encrypter le mot de passe pour pouvoir le comparer en situation réelle
+
 	$request = $pdo->prepare("select * from user where login=:login and password=:mdp");
   
 	$request->execute(array(':login'=>$login, ':mdp'=>$mdp));
